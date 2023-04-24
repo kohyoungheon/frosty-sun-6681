@@ -1,0 +1,9 @@
+<h1>Doctor Show Page</h1>
+<p>Name: <%= @doctor.name %></p>
+<p>Specialty: <%= @doctor.specialty %></p>
+<p>University: <%= @doctor.university %></p>
+<p>Hospital: <%= @doctor.hospital.name %></p>
+<p>Patients: <% @doctor.patients.each do |p| %>
+               <%= p.name %> <%= link_to "Delete #{p.id}", doctor_patient_path(@doctor,p), method: :delete %>
+             <% end %>
+</p>
